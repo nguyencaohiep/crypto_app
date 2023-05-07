@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="#161730">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Đăng ký"
+        android:textSize="30sp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:layout_marginTop="20dp"
+        android:id="@+id/email"
+        android:hint="Email"
+        android:layout_width="380dp"
+        android:layout_height="50dp"
+        android:inputType="textEmailAddress"
+
+        />
+
+    <EditText
+        android:layout_marginTop="20dp"
+        android:id="@+id/pass"
+        android:hint="Password"
+        android:layout_width="380dp"
+        android:layout_height="50dp"
+        android:inputType="textPassword"/>
+
+    <Button
+        android:id="@+id/btn_signup"
+        android:text="Đăng ký"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"/>
+</LinearLayout>
