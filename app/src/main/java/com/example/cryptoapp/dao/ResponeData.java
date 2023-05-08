@@ -2,7 +2,7 @@ package com.example.cryptoapp.dao;
 
 import java.util.List;
 
-public class ResponeData {
+public class ResponeData { // list
     private Boolean status;
     private String code;
     private String message;

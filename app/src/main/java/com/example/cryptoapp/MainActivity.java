@@ -34,6 +34,8 @@ import retrofit2.Response;
 public class MainActivity extends AppCompatActivity {
     private TextView nameView;
     private LinearLayout portfolio;
+    private String name;
+    private String userId;
 
     private Button findBtn;
     private EditText addressEdit;
@@ -45,8 +47,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Intent i = getIntent();
-        String name = i.getStringExtra("email");
-        String userId = i.getStringExtra("id");
+        name = i.getStringExtra("name");
+        userId = i.getStringExtra("id");
 
         nameView = findViewById(R.id.name);
         nameView.setText("Hello, " + name.split("@")[0]);
@@ -57,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         findBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                findAsset();
+                findAsset(name, userId);
             }
         });
 
@@ -83,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
                     ll.setOnClickListener(new View.OnClickListener(){
                         @Override
                         public void onClick(View v) {
-                            handle(crypto.getId());
+                            handle(crypto.getId(), name, userId);
                         }
                     });
 
@@ -124,15 +126,19 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-    private void handle(int id) {
-        Intent i = new Intent(MainActivity.this, SigninActivity.class);
-        i.putExtra("id", id);
+    private void handle(int id, String name, String userId) {
+        Intent i = new Intent(MainActivity.this, DetailActivity.class);
+        i.putExtra("id", userId);
+        i.putExtra("name", name);
+        i.putExtra("cryptoId", id);
         startActivity(i);
     }
 
-    private void findAsset() {
+    private void findAsset(String name, String userId) {
         Intent i = new Intent(MainActivity.this, AssetActivity.class);
         String address = addressEdit.getText().toString();
+        i.putExtra("id", userId);
+        i.putExtra("name", name);
         i.putExtra("address", address);
         startActivity(i);
     }

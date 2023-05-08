@@ -55,13 +55,12 @@ public class SignupActivity extends AppCompatActivity {
             Toast.makeText(this, "Vui lòng nhập password!", Toast.LENGTH_SHORT).show();
             return;
         }
-
         mAuth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
                     Toast.makeText(getApplicationContext(), "Tạo tài khoản thành công!", Toast.LENGTH_SHORT).show();
-                    Intent i = new Intent(SignupActivity.this, MainActivity.class);
+                    Intent i = new Intent(SignupActivity.this, SigninActivity.class);
                     startActivity(i);
                 } else {
                     Toast.makeText(getApplicationContext(), "Tạo tài khoản thất bại!", Toast.LENGTH_SHORT).show();

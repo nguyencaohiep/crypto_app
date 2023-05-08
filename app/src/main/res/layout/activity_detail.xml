@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AssetActivity"
+    android:orientation="vertical"
+    android:background="#161730"
+    android:padding="10dp">
+
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/arrow"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginBottom="10dp">
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="100dp"
+            android:layout_height="100dp"/>
+        <TextView
+            android:id="@+id/nameCrypto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="#fff"
+            android:textSize="25dp"/>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/symbol"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Symbol :"
+                android:textColor="#fff"
+                android:textSize="25dp"
+                android:layout_marginBottom="5dp"/>
+            <TextView
+                android:id="@+id/chainname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ChainName : "
+                android:textColor="#fff"
+                android:textSize="25dp"
+                android:layout_marginBottom="5dp"/>
+            <TextView
+                android:id="@+id/address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Address : "
+                android:textColor="#fff"
+                android:textSize="25dp"
+                android:layout_marginBottom="5dp"/>
+            <TextView
+                android:id="@+id/type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Type :"
+                android:textColor="#fff"
+                android:textSize="25dp"
+                android:layout_marginBottom="5dp"/>
+            <TextView
+                android:id="@+id/totalSupply"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Total Supply :"
+                android:textColor="#fff"
+                android:textSize="25dp"
+                android:layout_marginBottom="5dp"/>
+            <TextView
+                android:id="@+id/marketCap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="MarketCap :"
+                android:textColor="#fff"
+                android:textSize="25dp"
+                android:layout_marginBottom="5dp"/>
+            <TextView
+                android:id="@+id/volume24h"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Volume24h :"
+                android:textColor="#fff"
+                android:textSize="25dp"
+                android:layout_marginBottom="5dp"/>
+
+            <TextView
+                android:id="@+id/des"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:text="Description :"
+                android:textColor="#fff"
+                android:textSize="25dp" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

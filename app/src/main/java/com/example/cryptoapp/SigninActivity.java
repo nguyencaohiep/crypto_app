@@ -76,7 +76,7 @@ public class SigninActivity extends AppCompatActivity {
                         String email = user.getEmail();
                         String id = user.getUid();
                         Toast.makeText(getApplicationContext(), email, Toast.LENGTH_SHORT).show();
-                        i.putExtra("email", user.getEmail());
+                        i.putExtra("name", user.getEmail());
                         i.putExtra("id", id);
                         startActivity(i);
                     } else {
