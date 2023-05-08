@@ -1,18 +1,14 @@
 package com.example.cryptoapp.dao;
 
-import java.util.List;
-
-public class ResponeData {
+public class ResponeAddAsset {
     private Boolean status;
     private String code;
     private String message;
-    private List<Crypto> data;
 
-    public ResponeData(Boolean status, String code, String message, List<Crypto> data) {
+    public ResponeAddAsset(Boolean status, String code, String message) {
         this.status = status;
         this.code = code;
         this.message = message;
-        this.data = data;
     }
 
     public Boolean getStatus() {
@@ -37,13 +33,5 @@ public class ResponeData {
 
     public void setMessage(String message) {
         this.message = message;
-    }
-
-    public List<Crypto> getData() {
-        return data;
-    }
-
-    public void setData(List<Crypto> data) {
-        this.data = data;
     }
 }

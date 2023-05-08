@@ -4,14 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".AssetActivity"
     android:orientation="vertical"
     android:background="#161730">
 
     <LinearLayout
-        android:id="@+id/assets"
         android:layout_width="match_parent"
-        android:layout_height="230dp"
+        android:layout_height="150dp"
         android:orientation="vertical"
         android:layout_margin="10dp"
         android:padding="10dp"
@@ -20,8 +19,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="10dp">
+            android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/name"
@@ -32,10 +30,10 @@
                 android:textColor="#fff"/>
 
             <ImageView
-                android:id="@+id/noti"
+                android:id="@+id/back"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bell"/>
+                android:background="@drawable/arrow"/>
 
         </LinearLayout>
 
@@ -45,28 +43,21 @@
             android:orientation="vertical"
             android:gravity="center">
 
-            <EditText
-                android:id="@+id/address"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:hint="Address"
-                android:background="#fff"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:orientation="vertical"
-            android:gravity="center">
-            <Button
-                android:id="@+id/find_asset"
+            <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:text="Tìm tài sản"
-                android:gravity="center"
-                android:background="@drawable/asset_view"
-                android:textSize="25dp"
-                />
+                android:layout_height="wrap_content"
+                android:text="Tổng tài sản"
+                android:textSize="30dp"
+                android:layout_marginBottom="5dp"
+                android:textColor="#fff"/>
+
+            <TextView
+                android:id="@+id/assets"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$7,584.00"
+                android:textSize="45dp"
+                android:textColor="#fff"/>
         </LinearLayout>
     </LinearLayout>
 
@@ -79,7 +70,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Portfolio"
+            android:text="Assets"
             android:textColor="#fff"
             android:textSize="35dp" />
 
@@ -87,7 +78,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <LinearLayout
-                android:id="@+id/portfolio"
+                android:id="@+id/assets_detail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"

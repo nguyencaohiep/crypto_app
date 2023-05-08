@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Adapter;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -34,6 +35,9 @@ public class MainActivity extends AppCompatActivity {
     private TextView nameView;
     private LinearLayout portfolio;
 
+    private Button findBtn;
+    private EditText addressEdit;
+
     DecimalFormat df = new DecimalFormat("#.##");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,9 +46,20 @@ public class MainActivity extends AppCompatActivity {
 
         Intent i = getIntent();
         String name = i.getStringExtra("email");
+        String userId = i.getStringExtra("id");
 
         nameView = findViewById(R.id.name);
         nameView.setText("Hello, " + name.split("@")[0]);
+        addressEdit = findViewById(R.id.address);
+
+        findBtn = findViewById(R.id.find_asset);
+
+        findBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                findAsset();
+            }
+        });
 
         portfolio = (LinearLayout) findViewById(R.id.portfolio);
 
@@ -65,7 +80,6 @@ public class MainActivity extends AppCompatActivity {
                     ll.setOrientation(LinearLayout.HORIZONTAL);
                     ll.setGravity(Gravity.CENTER_VERTICAL);
                     ll.setBackgroundResource(R.drawable.crypto);
-                    ll.setId(crypto.getId());
                     ll.setOnClickListener(new View.OnClickListener(){
                         @Override
                         public void onClick(View v) {
@@ -87,7 +101,6 @@ public class MainActivity extends AppCompatActivity {
                     nameView.setTextColor(getResources().getColor(R.color.white));
                     nameView.setPadding(15,0,0,0);
                     ll.addView(nameView);
-
 
                     TextView priceView = new TextView(MainActivity.this);
                     LinearLayout.LayoutParams priceLayoutParams = new
@@ -114,6 +127,13 @@ public class MainActivity extends AppCompatActivity {
     private void handle(int id) {
         Intent i = new Intent(MainActivity.this, SigninActivity.class);
         i.putExtra("id", id);
+        startActivity(i);
+    }
+
+    private void findAsset() {
+        Intent i = new Intent(MainActivity.this, AssetActivity.class);
+        String address = addressEdit.getText().toString();
+        i.putExtra("address", address);
         startActivity(i);
     }
 }
