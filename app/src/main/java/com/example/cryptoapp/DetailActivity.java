@@ -89,7 +89,7 @@ public class DetailActivity  extends AppCompatActivity {
 
            @Override
            public void onFailure(Call<ResponeDetail> call, Throwable t) {
-               nameCrypto.setText(t.getMessage());
+
                Toast.makeText(DetailActivity.this, "Gặp lỗi khi tải dữ liệu", Toast.LENGTH_SHORT).show();
            }
        });

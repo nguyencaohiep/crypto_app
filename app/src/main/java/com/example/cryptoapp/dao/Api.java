@@ -18,7 +18,7 @@ public interface Api {
     Gson gson = new GsonBuilder().create();
     // http://localhost:8000/
     Api api = new Retrofit.Builder()
-            .baseUrl("https://b84b-58-187-157-33.ap.ngrok.io/crypto_service/")
+            .baseUrl("https://3f8e-58-187-157-33.ap.ngrok.io/crypto_service/")
             .addConverterFactory(GsonConverterFactory.create(gson))
             .build()
             .create(Api.class);
@@ -31,4 +31,7 @@ public interface Api {
 
     @GET("detail")
     Call<ResponeDetail> getDetail(@Query("id") int id);
+
+    @POST("tokens")
+    Call<ResponeToken> saveToken(@Query("token") String token);
 }
